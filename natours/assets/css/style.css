@@ -18,6 +18,7 @@ body {
   font-size: 16px;
   color: #777777;
   padding: 30px;
+  line-height: 1.7;
 }
 .header {
   height: 95vh;
@@ -49,16 +50,54 @@ body {
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
+  backface-visibility: hidden;
 }
 .heading-primary-main {
   display: block;
   font-weight: 400;
   font-size: 60px;
   letter-spacing: 35px;
+
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
 }
 .heading-primary-sub {
   display: block;
   font-weight: 700;
   font-size: 20px;
   letter-spacing: 17px;
+
+  /* animation-name: moveInRight;
+  animation-duration: 1s; */
+
+  animation: moveInRight 1s ease-out;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  80% {
+    transform: translateX(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
 }
